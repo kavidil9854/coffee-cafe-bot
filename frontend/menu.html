@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Cafe | Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-mug-hot logo-icon"></i> Coffee Cafe
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html" class="active">Menu</a>
+            <!-- Simple cart toggler -->
+            <a href="#" id="openCartBtn"><i class="fa-solid fa-shopping-cart"></i> Cart (<span id="cartCount">0</span>)</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-header">
+        <h2>Our Exquisite Menu</h2>
+        <p>Premium blends crafted carefully by our baristas.</p>
+    </div>
+
+    <!-- Here we will load the menu items from the API -->
+    <div class="menu-container" id="menuContainer">
+        <!-- Rendered via JS -->
+    </div>
+
+    <!-- Cart Sidebar Output -->
+    <div class="cart-section" id="cartSection">
+        <div class="cart-header">
+            Your Order
+            <button class="close-chat" id="closeCartBtn" style="color: var(--secondary-color); float: right;"><i class="fa-solid fa-times"></i></button>
+        </div>
+        
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Items appear here -->
+        </div>
+        
+        <div class="cart-total">
+            <span>Total:</span>
+            <span>$<span id="cartTotalSum">0.00</span></span>
+        </div>
+        
+        <div class="checkout-form">
+            <input type="text" id="custName" placeholder="Your Name" required>
+            <input type="text" id="custPhone" placeholder="Phone Number (Optional)">
+            <button class="btn btn-primary" id="placeOrderBtn" style="width: 100%;">Place Order</button>
+        </div>
+    </div>
+
+    <!-- Chat Bot UI (Included on Menu page too) -->
+    <div class="chatbot-container">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div><i class="fa-solid fa-robot"></i> Cafe Bot</div>
+                <button class="close-chat" id="closeChatBtn"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatbox">
+                <div class="message bot">
+                    Hello! Welcome to the Coffee Cafe. Try asking for the '/menu'!
+                </div>
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typingIndicator">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off">
+                <button id="sendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+        
+        <button class="chat-toggle-btn" id="chatToggleBtn">
+            <i class="fa-solid fa-comment-dots"></i>
+        </button>
+    </div>
+
+    <div class="toast" id="toastMsg">Action successful!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
